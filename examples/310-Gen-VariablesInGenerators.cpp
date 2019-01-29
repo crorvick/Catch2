@@ -65,7 +65,6 @@ TEST_CASE("Generate random doubles across different ranges",
             return makeGenerators(take(50, random(std::get<0>(r), std::get<1>(r))));
         }
     );
-    CAPTURE(number);
     REQUIRE(std::abs(number) > 0);
 }
 
