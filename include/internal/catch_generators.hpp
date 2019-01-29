@@ -265,7 +265,7 @@ namespace Generators {
         size_t m_current_repeat = 0;
         size_t m_repeat_index = 0;
     public:
-        RepeatGenerator(GeneratorWrapper<T>&& generator, size_t repeats) :
+        RepeatGenerator(size_t repeats, GeneratorWrapper<T>&& generator):
             m_generator(std::move(generator)),
             m_target_repeats(repeats)
         {
@@ -306,8 +306,8 @@ namespace Generators {
     };
 
     template <typename T>
-    GeneratorWrapper<T> repeat(GeneratorWrapper<T>&& generator, size_t repeats) {
-        return GeneratorWrapper<T>(pf::make_unique<RepeatGenerator<T>>(std::move(generator), repeats));
+    GeneratorWrapper<T> repeat(size_t repeats, GeneratorWrapper<T>&& generator) {
+        return GeneratorWrapper<T>(pf::make_unique<RepeatGenerator<T>>(repeats, std::move(generator)));
     }
 
     template <typename T, typename U, typename Func>

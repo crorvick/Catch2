@@ -141,7 +141,7 @@ TEST_CASE("Generators -- adapters", "[generators]") {
     }
     SECTION("Repeating a generator") {
         // This will return values [1, 2, 3, 1, 2, 3]
-        auto j = GENERATE(repeat(values({ 1, 2, 3 }), 2));
+        auto j = GENERATE(repeat(2, values({ 1, 2, 3 })));
         REQUIRE(j > 0);
     }
 }

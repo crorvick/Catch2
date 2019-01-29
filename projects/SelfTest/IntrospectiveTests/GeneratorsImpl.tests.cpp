@@ -79,12 +79,12 @@ TEST_CASE("Generators internals", "[generators][internals]") {
     }
     SECTION("Repeat") {
         SECTION("Singular repeat") {
-            auto gen = repeat(value(3), 1);
+            auto gen = repeat(1, value(3));
             REQUIRE(gen.get() == 3);
             REQUIRE_FALSE(gen.next());
         }
         SECTION("Actual repeat") {
-            auto gen = repeat(values({ 1, 2, 3 }), 2);
+            auto gen = repeat(2, values({ 1, 2, 3 }));
             REQUIRE(gen.get() == 1);
             REQUIRE(gen.next());
             REQUIRE(gen.get() == 2);
