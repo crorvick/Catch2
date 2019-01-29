@@ -36,9 +36,9 @@ a test case,
 * 2 fundamental generators
   * `ValueGenerator<T>` -- contains only single element
   * `ValuesGenerator<T>` -- contains multiple elements
-* 5 generic generators that modify other generators
+* 4 generic generators that modify other generators
   * `FilterGenerator<T, Predicate>` -- filters out elements from a generator
-  for which the predicate returns "false".
+  for which the predicate returns "false"
   * `TakeGenerator<T>` -- takes `n` elements from a generator
   * `RepeatGenerator<T>` -- repeats output from a generator `n` times
   * `MapGenerator<T, U, Func>` -- returns the result of applying `Func`
@@ -51,9 +51,9 @@ type, making their usage much nicer. These are
 * `values(std::initializer_list<T>)` for `ValuesGenerator<T>`
 * `filter(predicate, GeneratorWrapper<T>&&)` for `FilterGenerator<T, Predicate>`
 * `take(size, GeneratorWrapper<T>&&)` for `TakeGenerator<T>`
-* `repeat(GeneratorWrapper<T>&&, repeats)` for `RepeatGenerator<T>`
-* `map(func, GeneratorWrapper<T>&&)` for `MapGenerator<T, T, Func>` (map to the same type)
-* `map<T>(func, GeneratorWrapper<T>&&)` for `MapGenerator<T, U, Func>` (map to a different type)
+* `repeat(repeats, GeneratorWrapper<T>&&)` for `RepeatGenerator<T>`
+* `map(func, GeneratorWrapper<T>&&)` for `MapGenerator<T, T, Func>` (map `T` to `T`)
+* `map<T>(func, GeneratorWrapper<U>&&)` for `MapGenerator<T, U, Func>` (map `U` to `T`)
 
 And can be used as shown in the example below to create a generator
 that returns 100 odd random number:
@@ -63,7 +63,7 @@ TEST_CASE("Generating random ints", "[example][generator]") {
     SECTION("Deducing functions") {
         auto i = GENERATE(take(100, filter([](int i) { return i % 2 == 1; }, random(-100, 100))));
         REQUIRE(i > -100);
-        REQUIRE(i <100);
+        REQUIRE(i < 100);
         REQUIRE(i % 2 == 1);
     }
 }
@@ -82,7 +82,7 @@ used with other generators as arguments, such as `auto i = GENERATE(0, 2,
 take(100, random(300, 3000)));`. This is useful e.g. if you know that
 specific inputs are problematic and want to test them separately/first.
 
-__For safety reasons, you cannot use variables inside the `GENERATE` macro__
+**For safety reasons, you cannot use variables inside the `GENERATE` macro.**
 
 You can also override the inferred type by using `as<type>` as the first
 argument to the macro. This can be useful when dealing with string literals,
