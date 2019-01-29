@@ -50,7 +50,7 @@ TEST_CASE("tables", "[generators]") {
         tuple_type{"etc...", 6}
     }));
 
-    REQUIRE(strlen(std::get<0>(data)) == std::get<1>(data));
+    REQUIRE(strlen(std::get<0>(data)) == static_cast<size_t>(std::get<1>(data)));
 }
 
 

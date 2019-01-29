@@ -11601,7 +11601,7 @@ loose text artifact
     <TestCase name="tables" tags="[generators]" filename="projects/<exe-name>/UsageTests/Generators.tests.cpp" >
       <Expression success="true" type="REQUIRE" filename="projects/<exe-name>/UsageTests/Generators.tests.cpp" >
         <Original>
-          strlen(std::get&lt;0>(data)) == std::get&lt;1>(data)
+          strlen(std::get&lt;0>(data)) == static_cast&lt;size_t>(std::get&lt;1>(data))
         </Original>
         <Expanded>
           5 == 5
@@ -11609,7 +11609,7 @@ loose text artifact
       </Expression>
       <Expression success="true" type="REQUIRE" filename="projects/<exe-name>/UsageTests/Generators.tests.cpp" >
         <Original>
-          strlen(std::get&lt;0>(data)) == std::get&lt;1>(data)
+          strlen(std::get&lt;0>(data)) == static_cast&lt;size_t>(std::get&lt;1>(data))
         </Original>
         <Expanded>
           6 == 6
@@ -11617,7 +11617,7 @@ loose text artifact
       </Expression>
       <Expression success="true" type="REQUIRE" filename="projects/<exe-name>/UsageTests/Generators.tests.cpp" >
         <Original>
-          strlen(std::get&lt;0>(data)) == std::get&lt;1>(data)
+          strlen(std::get&lt;0>(data)) == static_cast&lt;size_t>(std::get&lt;1>(data))
         </Original>
         <Expanded>
           5 == 5
@@ -11625,7 +11625,7 @@ loose text artifact
       </Expression>
       <Expression success="true" type="REQUIRE" filename="projects/<exe-name>/UsageTests/Generators.tests.cpp" >
         <Original>
-          strlen(std::get&lt;0>(data)) == std::get&lt;1>(data)
+          strlen(std::get&lt;0>(data)) == static_cast&lt;size_t>(std::get&lt;1>(data))
         </Original>
         <Expanded>
           6 == 6

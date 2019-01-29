@@ -9633,7 +9633,7 @@ Generators.tests.cpp:<line number>
 ...............................................................................
 
 Generators.tests.cpp:<line number>: PASSED:
-  REQUIRE( strlen(std::get<0>(data)) == std::get<1>(data) )
+  REQUIRE( strlen(std::get<0>(data)) == static_cast<size_t>(std::get<1>(data)) )
 with expansion:
   5 == 5
 
@@ -9644,7 +9644,7 @@ Generators.tests.cpp:<line number>
 ...............................................................................
 
 Generators.tests.cpp:<line number>: PASSED:
-  REQUIRE( strlen(std::get<0>(data)) == std::get<1>(data) )
+  REQUIRE( strlen(std::get<0>(data)) == static_cast<size_t>(std::get<1>(data)) )
 with expansion:
   6 == 6
 
@@ -9655,7 +9655,7 @@ Generators.tests.cpp:<line number>
 ...............................................................................
 
 Generators.tests.cpp:<line number>: PASSED:
-  REQUIRE( strlen(std::get<0>(data)) == std::get<1>(data) )
+  REQUIRE( strlen(std::get<0>(data)) == static_cast<size_t>(std::get<1>(data)) )
 with expansion:
   5 == 5
 
@@ -9666,7 +9666,7 @@ Generators.tests.cpp:<line number>
 ...............................................................................
 
 Generators.tests.cpp:<line number>: PASSED:
-  REQUIRE( strlen(std::get<0>(data)) == std::get<1>(data) )
+  REQUIRE( strlen(std::get<0>(data)) == static_cast<size_t>(std::get<1>(data)) )
 with expansion:
   6 == 6
 

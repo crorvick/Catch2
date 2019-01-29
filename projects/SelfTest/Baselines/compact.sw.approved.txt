@@ -1305,10 +1305,10 @@ Generators.tests.cpp:<line number>: passed: data.str.size() == data.len for: 3 =
 Generators.tests.cpp:<line number>: passed: data.str.size() == data.len for: 3 == 3
 Generators.tests.cpp:<line number>: passed: data.str.size() == data.len for: 5 == 5
 Generators.tests.cpp:<line number>: passed: data.str.size() == data.len for: 4 == 4
-Generators.tests.cpp:<line number>: passed: strlen(std::get<0>(data)) == std::get<1>(data) for: 5 == 5
-Generators.tests.cpp:<line number>: passed: strlen(std::get<0>(data)) == std::get<1>(data) for: 6 == 6
-Generators.tests.cpp:<line number>: passed: strlen(std::get<0>(data)) == std::get<1>(data) for: 5 == 5
-Generators.tests.cpp:<line number>: passed: strlen(std::get<0>(data)) == std::get<1>(data) for: 6 == 6
+Generators.tests.cpp:<line number>: passed: strlen(std::get<0>(data)) == static_cast<size_t>(std::get<1>(data)) for: 5 == 5
+Generators.tests.cpp:<line number>: passed: strlen(std::get<0>(data)) == static_cast<size_t>(std::get<1>(data)) for: 6 == 6
+Generators.tests.cpp:<line number>: passed: strlen(std::get<0>(data)) == static_cast<size_t>(std::get<1>(data)) for: 5 == 5
+Generators.tests.cpp:<line number>: passed: strlen(std::get<0>(data)) == static_cast<size_t>(std::get<1>(data)) for: 6 == 6
 Exception.tests.cpp:<line number>: failed: unexpected exception with message: 'Why would you throw a std::string?'
 Misc.tests.cpp:<line number>: passed: result == "\"wide load\"" for: ""wide load"" == ""wide load""
 Misc.tests.cpp:<line number>: passed: result == "\"wide load\"" for: ""wide load"" == ""wide load""
